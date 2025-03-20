@@ -3,27 +3,31 @@ import { FaLinkedin } from "react-icons/fa";
 import { AiOutlineExport } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import { Tooltip } from "@heroui/react";
+import cvGian from "../../extra/GIANCARLOS_CV.pdf";
 
-import {RotateIcons} from "./RotateIcons"
-
+import { RotateIcons } from "./RotateIcons";
 
 export const MeSection = () => {
   const tooltips = [
-    {
+    /*{
       icon: <FaLinkedin className="text-white text-2xl" />,
       content: "¡Visita mi linkedin!",
-    },
+    },*/
     {
       icon: <MdEmail className="text-white text-2xl" />,
       content: "¡Escribeme a mi correo!",
+      href: "mailto:giantrabajodev@gmail.com",
     },
     {
       icon: <FaGithub className="text-white text-2xl" />,
       content: "¡Visita mi github!",
+      href: "https://github.com/gianLoyola",
     },
     {
       icon: <AiOutlineExport className="text-white text-2xl" />,
       content: "¡Descarga mi cv!",
+      download: "Cv_Giancarlos",
+      href: cvGian,
     },
   ];
 
@@ -54,7 +58,14 @@ export const MeSection = () => {
           <div className="flex  gap-4 justify-center lg:justify-start ">
             {tooltips.map((x, index) => (
               <Tooltip key={index} content={x.content}>
-                {x.icon}
+                <a
+                  href={x.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {...(x.download && { download: x.download })}
+                >
+                  {x.icon}
+                </a>
               </Tooltip>
             ))}
           </div>
@@ -62,8 +73,7 @@ export const MeSection = () => {
 
         {/* Imagen */}
         <div className="w-full lg:w-2/3 flex justify-center pt-4">
-        <RotateIcons/>
-   
+          <RotateIcons />
         </div>
       </div>
     </div>

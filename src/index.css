@@ -2,33 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root {
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-
-/* Estilos específicos para el componente de rotación */
-.rotate-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.rotate-icons {
-  transform-origin: center center;
-}
-
-/* Estilos para forzar el Navbar sticky */
-[data-heroui-navbar="true"] {
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 1000 !important;
-}
-
-/* Asegurarse de que el contenedor principal tenga suficiente altura */
 #aboutMe {
   min-height: 100vh;
   display: flex;

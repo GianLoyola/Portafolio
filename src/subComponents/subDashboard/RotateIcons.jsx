@@ -6,23 +6,22 @@ import { FaCss3Alt } from "react-icons/fa";
 import { SiNextui } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { Image } from "@heroui/react";
-
+import fotoPerfil from "../../img/Foto2bg.png"
 export const RotateIcons = () => {
   return (
     <div className="relative flex justify-center items-center ~w-[250px]/[500px] ~h-[250px]/[500px]">
-      <div className=" ~w-[250px]/[500px] ~h-[250px]/[500px] rounded-full overflow-hidden z-0 border-3 border-blue-500">
+      <div className="flex justify-center items-center ~w-[250px]/[500px] ~h-[250px]/[500px] rounded-full overflow-hidden z-0 border-3 border-blue-500">
         <Image
-          src="https://i.pinimg.com/736x/31/aa/4e/31aa4e240774dfc0f560a9653366b5fd.jpg"
+          src={fotoPerfil}
           alt="Foto de perfil"
-          className="w-full h-full object-cover"
-          width={400}
-          height={400}
+          className="w-full h-full object-contain "
+  
         />
       </div>
       
       {/* Contenedor de iconos rotantes */}
       <motion.div
-        className="absolute inset-0 rotate-icons z-10 pointer-events-none"
+        className="absolute inset-0 z-10 pointer-events-none"
         animate={{ rotate: 360 }}
         transition={{
           duration: 20,

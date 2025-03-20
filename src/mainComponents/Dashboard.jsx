@@ -30,13 +30,13 @@ export const Dashboard = () => {
     { label: "Experiencia", href: "/#experience", icon: <HiOutlineIdentification />,},
     { label: "Contactame", href: "/#contact", icon: <HiOutlineUserGroup /> },
   ];
-
   return (
     <div id="aboutMe" className="bg-gradient-to-b from-[#091C3A] to-[#060814] min-h-screen">
       <div className="sticky top-0 z-50">
         <Navbar
           height={"55px"}
           className="!bg-transparent !bg-opacity-0 !backdrop-saturate-100"
+          isMenuOpen={isMenuOpen}
           onMenuOpenChange={setIsMenuOpen}
           isBlurred={true}
         >
@@ -46,7 +46,7 @@ export const Dashboard = () => {
               className="md:hidden text-white"
             />
             <NavbarBrand>
-              <p className="text-white font-bold text-inherit">ACME</p>
+              <p className="text-white font-bold text-inherit">Portafolio</p>
             </NavbarBrand>
           </NavbarContent>
 
@@ -79,10 +79,11 @@ export const Dashboard = () => {
                   color={path === x.href ? "primary" : ""}
                   href={x.href}
                   size="lg"
+                  onClick={() => setIsMenuOpen(false)}
                   aria-current={path === x.path ? "page" : undefined}
                 >
                   {x.icon}
-                  {x.label}
+                  <span className="ml-2">{x.label}</span>
                 </Link>
               </NavbarMenuItem>
             ))}
